@@ -1,0 +1,75 @@
+/* Tema oscuro por defecto (variables en :root) */
+:root {
+  --color-bg: #121212;
+  --color-text: #e0e0e0;
+  --color-card: #1e1e1e;
+  --color-code-bg: #2b2b2b;
+  --color-code-text: #ffa726;
+  --color-toolbar: #1f1f1f;
+}
+
+/* Tema claro al aplicar clase .light-theme */
+.light-theme {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-card: #f9f9f9;
+  --color-code-bg: #f0f0f0;
+  --color-code-text: #f58104;
+  --color-toolbar: #3f51b5; /* coincide con indigo-pink */
+}
+
+/* Aplicar variables globales */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo de la toolbar de Angular Material */
+mat-toolbar {
+  background-color: var(--color-toolbar) !important;
+  color: var(--color-text) !important;
+}
+
+/* Tipografía */
+h2 {
+  font-size: 28px !important;
+}
+
+h5 {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+
+p {
+  font-size: 15px !important;
+}
+
+p code {
+  font-size: 16px !important;
+  color: var(--color-code-text) !important;
+  font-weight: 700 !important;
+}
+
+/* Tarjetas y componentes */
+.card,
+.mat-card {
+  background-color: var(--color-card) !important;
+  color: var(--color-text) !important;
+}
+
+/* Bloques de código */
+pre,
+code {
+  background-color: var(--color-code-bg) !important;
+  color: var(--color-code-text) !important;
+  padding: 1rem;
+  display: block;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+}

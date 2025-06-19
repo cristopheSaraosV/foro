@@ -1,0 +1,22 @@
+<h2>{{ post().titulo }}<span class="badge text-bg-danger ms-2">Angular</span></h2>
+
+<div class="card text-start">
+  <div class="card-body">
+    <h5 class="card-title">{{ post().subtitulo }}</h5>
+    <p class="card-text" [innerHTML]="post().textoHtml"></p>
+
+    @if (post().haveCode) {
+      <div class="bg-dark p-3 rounded position-relative">
+<pre><code #codeRef class="language-ts" [innerHTML]="post().codigo" ngNonBindable></code></pre>
+        <button
+          class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2"
+          (click)="copiarCodigo()">
+          {{ copyBtnText() }}
+        </button>
+      </div>
+    }
+  </div>
+  <div class="card-footer text-body-secondary">
+    {{ post().fecha }}
+  </div>
+</div>
